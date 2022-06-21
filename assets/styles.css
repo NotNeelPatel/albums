@@ -1,0 +1,10 @@
+ .hide {
+     display: none;
+ }
+
+ .card {
+     border: 1px solid;
+     padding: 0.5em;
+     margin: 1em;
+     display: inline-table;
+ }
