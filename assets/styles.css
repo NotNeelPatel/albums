@@ -6,5 +6,24 @@
      border: 1px solid;
      padding: 0.5em;
      margin: 1em;
-     display: inline-table;
+
+ }
+
+ .entries {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+     grid-gap: 1em;
+ }
+
+
+ #sliders {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+     grid-gap: 1em;
+
+ }
+
+ input[name="search"] {
+     width: 60%;
+     height: 2.5em;
  }

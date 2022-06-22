@@ -14,12 +14,14 @@ searchInput.addEventListener("input", (e) => {
   entries.forEach((entry) => {
     const isVisible =
       entry.album.toLowerCase().includes(value) ||
-      entry.artists.toLowerCase().includes(value);
+      entry.artist.toLowerCase().includes(value) ||
+      entry.year.includes(value);
+    entry.artist.toLowerCase().includes(value);
     entry.element.classList.toggle("hide", !isVisible);
   });
 });
 
-var artist;
+var artist_image;
 var options;
 
 function createEntries(firstTime) {
@@ -34,24 +36,25 @@ function createEntries(firstTime) {
       entries = albumData.map((entry) => {
         const card = dataTemplate.content.cloneNode(true).children[0];
         const links = card.querySelector("[data-links]");
-        const artists = card.querySelector("[data-artists]");
+        const artist_card = card.querySelector("[data-artist]");
         const cover = card.querySelector("[data-cover]");
         if (images) {
-          artist = entry.artists;
+          artist_image = entry.artist;
           options = { album: entry.album, size: "small" };
-          albumArt(artist, options, function (err, res) {
+          albumArt(artist_image, options, function (err, res) {
             cover.src = res;
           });
         }
 
         links.textContent = entry.album;
-        artists.textContent = entry.artists;
+        artist_card.textContent = entry.artist;
 
         links.href = entry.url;
         entryContainer.append(card);
         return {
           album: entry.album,
-          artists: entry.artists,
+          artist: entry.artist,
+          year: entry.year,
           happiness: entry.happiness,
           energy: entry.energy,
           lyrics: entry.lyrics,
@@ -120,19 +123,9 @@ function search() {
       experimentalSlider.value - albumData[i].experimental
     );
     lyrics = Math.abs(lyricsSlider.value - albumData[i].lyrics);
+    score[i] = happiness + energy + experimental + lyrics;
 
-    if (happiness <= 1) {
-      score[i] += 2 - happiness;
-    }
-    if (energy <= 1) {
-      score[i] += 2 - energy;
-    }
-    if (experimental <= 1) {
-      score[i] += 2 - experimental;
-    }
-    if (lyrics <= 1) {
-      score[i] += 2 - lyrics;
-    }
+    console.log(albumData[i].album, score[i]);
   }
 
   for (let j = 1; j < albumData.length; j++) {
@@ -147,6 +140,7 @@ function search() {
     score[k + 1] = current;
     albumData[k + 1] = current2;
   }
-  albumData.reverse();
+  //albumData.reverse();
   createEntries(false);
+  console.log("----");
 }

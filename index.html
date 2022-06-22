@@ -29,10 +29,9 @@
     -->
 
     <div class="search-wrapper">
-      <p><input type="checkbox" id="checkbox" onclick="image()"> enable album covers</p>
-      <input type="search" placeholder="doesn't work :(" id="search" data-search />
-      <h2>happiness</h2>
-      <div class="search-wrapper">
+      <div id="sliders">
+        <h2>happiness</h2>
+
         <input
           type="range"
           min="1"
@@ -43,55 +42,70 @@
         />
         <p><span id="happiness-value"></span></p>
         <p>sad-----------not sad</p>
-  
-        <h2>energy</h2>
-        <div class="search-wrapper">
-          <input
-            type="range"
-            min="1"
-            max="10"
-            value="5"
-            id="energy-slider"
-            class="slider"
-          />
-          <p><span id="energy-value"></span></p>
-          <p>low energy---------very hype</p>
-  
-          <h2>experimental</h2>
-          <div class="search-wrapper">
-            <input
-              type="range"
-              min="1"
-              max="10"
-              value="5"
-              id="experimental-slider"
-              class="slider"
-            />
-            <p><span id="experimental-value"></span></p>
-            <p>influenced--------influential</p>
 
-            <h2>lyrics</h2>
-            <div class="search-wrapper">
-              <input
-                type="range"
-                min="1"
-                max="10"
-                value="5"
-                id="lyrics-slider"
-                class="slider"
-              />
-              <p><span id="lyrics-value"></span></p>
-              <p>lyrics don't matter--------lyrics matter</p>
+        <h2>energy</h2>
+
+        <input
+          type="range"
+          min="1"
+          max="10"
+          value="5"
+          id="energy-slider"
+          class="slider"
+        />
+        <p><span id="energy-value"></span></p>
+        <p>low energy---------very hype</p>
+
+        <h2>experimental</h2>
+
+        <input
+          type="range"
+          min="1"
+          max="10"
+          value="5"
+          id="experimental-slider"
+          class="slider"
+        />
+        <p><span id="experimental-value"></span></p>
+        <p>influenced--------influential</p>
+
+        <h2>lyrics</h2>
+
+        <input
+          type="range"
+          min="1"
+          max="10"
+          value="5"
+          id="lyrics-slider"
+          class="slider"
+        />
+        <p><span id="lyrics-value"></span></p>
+        <p>lyrics don't matter--------lyrics matter</p>
+      </div>
+
+      <button class="theme-button" type="button" onclick="search()">
+        Search
+      </button>
+      <br />
+      <br />
+
+      <input
+        type="search"
+        placeholder="Search Album,Artist,or Year"
+        name="search"
+        data-search
+      />
+      <p>
+        <input type="checkbox" id="checkbox" onclick="image()" /> enable album
+        covers
+      </p>
     </div>
-    <button class="theme-button" type="button" onclick="search()">
-      Search
-    </button>
     <div id="AlbumList">
       <div class="entries" data-entries-container></div>
       <template data-template>
         <div class="card">
           <h2><a class="link" href="#" data-links></a></h2>
-          <h3 class="artists" data-artists></h3>
+          <h3 class="artist" data-artist></h3>
           <img class="cover" src="#" data-cover />
         </div>
       </template>
@@ -108,9 +122,7 @@
     <ul>
       <a href="https://notneelpatel.github.io">My Website</a>
       <a>|</a>
-      <a href="https://github.com/NotNeelPatel/Albums"
-        >GitHub Repo</a
-      >
+      <a href="https://github.com/NotNeelPatel/Albums">GitHub Repo</a>
     </ul>
   </footer>
 </html>
