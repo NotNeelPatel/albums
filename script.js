@@ -86,10 +86,14 @@ var experimentalValue = document.getElementById("experimental-value");
 var lyricsSlider = document.getElementById("lyrics-slider");
 var lyricsValue = document.getElementById("lyrics-value");
 
+var lengthSlider = document.getElementById("length-slider");
+var lengthValue = document.getElementById("length-value");
+
 happinessValue.innerHTML = happinessSlider.value;
 energyValue.innerHTML = energySlider.value;
 experimentalValue.innerHTML = experimentalSlider.value;
 lyricsValue.innerHTML = lyricsSlider.value;
+lengthValue.innerHTML = lengthSlider.value;
 
 happinessSlider.oninput = function () {
   happinessValue.innerHTML = this.value;
@@ -107,16 +111,29 @@ lyricsSlider.oninput = function () {
   lyricsValue.innerHTML = this.value;
 };
 
+lengthSlider.oninput = function () {
+  lengthValue.innerHTML = this.value;
+};
+
 function search() {
   var happiness = 0;
   var energy = 0;
   var experimental = 0;
   var lyrics = 0;
+  var length = 0;
 
   let score = new Array(albumData.length);
   for (let i = 0; i < albumData.length; ++i) score[i] = 0;
 
   for (let i = 0; i < albumData.length; i++) {
+    score[i] =
+      Math.pow(happinessSlider.value - albumData[i].happiness, 2) +
+      Math.pow(energySlider.value - albumData[i].energy, 2) +
+      Math.pow(experimentalSlider.value - albumData[i].experimental, 2) +
+      Math.pow(lyricsSlider.value - albumData[i].lyrics, 2) +
+      Math.pow((lengthSlider.value - albumData[i].length) / 15, 2);
+
+    /*
     happiness = Math.abs(happinessSlider.value - albumData[i].happiness);
     energy = Math.abs(energySlider.value - albumData[i].energy);
     experimental = Math.abs(
@@ -124,6 +141,7 @@ function search() {
     );
     lyrics = Math.abs(lyricsSlider.value - albumData[i].lyrics);
     score[i] = happiness + energy + experimental + lyrics;
+    */
 
     console.log(albumData[i].album, score[i]);
   }

@@ -9,6 +9,8 @@
       src="https://unpkg.com/album-art"
       defer
     ></script>
+    <script src="./te.js" defer></script>
+
     <script src="./script.js" defer></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -81,6 +83,19 @@
         />
         <p><span id="lyrics-value"></span></p>
         <p>lyrics don't matter--------lyrics matter</p>
+
+        <h2>album length (mins)</h2>
+
+        <input
+          type="range"
+          min="0"
+          max="150"
+          value="5"
+          id="length-slider"
+          class="slider"
+        />
+        <p><span id="length-value"></span></p>
+        <p>short--------------long</p>
       </div>
 
       <button class="theme-button" type="button" onclick="search()">

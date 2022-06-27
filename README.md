@@ -12,6 +12,4 @@ To do:
 - More functionality
 - Better UI
 - Cleaner/more Efficient methods of sorting
-- Fix Search bar
-- Add albums that aren't by Kanye West
 - Community (far into the future)
