@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Albums I Enjoy</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header>
+      <h1>Albums That I Enjoy</h1>
+      <h3 style="text-align:center">by neel patel</h3>
+      <br />
+      <br />
+    </header>
+
+    <div class="search-wrapper">
+      <div id="sliders">
+        <p>popularity</p>
+        <div id="box-slider-val">
+          <input type="checkbox" id="checkbox-popularity"  checked onclick="enable_checkbox('popularity') " />
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="5"
+            id="popularity-slider"
+            class="slider"
+          />
+          <p><span id="popularity-value">5</span></p>
+        </div>
+        <p>acousticness</p>
+        <div id="box-slider-val">
+          <input type="checkbox" id="checkbox-acousticness" checked onclick="enable_checkbox('acousticness')" />
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="5"
+            id="acousticness-slider"
+            class="slider"
+          />
+          <p><span id="acousticness-value">5</span></p>
+        </div>
+        <p>danceability</p>
+        <div id="box-slider-val">
+          <input type="checkbox" id="checkbox-danceability" checked onclick="enable_checkbox('danceability')" />
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="5"
+            id="danceability-slider"
+            class="slider"
+          />
+          <p><span id="danceability-value">5</span></p>
+        </div>
+        <p>energy</p>
+        <div id="box-slider-val">
+          <input type="checkbox" id="checkbox-energy" checked onclick="enable_checkbox('energy')" />
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="5"
+            id="energy-slider"
+            class="slider"
+          />
+          <p><span id="energy-value">5</span></p>
+        </div>
+        <p>instrumentalness</p>
+        <div id="box-slider-val">
+          <input type="checkbox" id="checkbox-instrumentalness" checked onclick="enable_checkbox('instrumentalness')" />
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="5"
+            id="instrumentalness-slider"
+            class="slider"
+          />
+          <p><span id="instrumentalness-value">5</span></p>
+        </div>
+        <p>happiness</p>
+        <div id="box-slider-val">
+          <input type="checkbox" id="checkbox-valence" checked onclick="enable_checkbox('valence')" />
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value="5"
+            id="valence-slider"
+            class="slider"
+          />
+          <p><span id="valence-value">5</span></p>
+        </div>
+
+        <div>
+      </div>
+
+      </div>
+    </div>
+       <br />
+
+      <input
+        style = "display:block; max-width: 100%;"
+        type="search"
+        placeholder="Search Album, Artist, Year, Genre"
+        name="search"
+        data-search
+      />
+      <br />
+    
+ 
+    <div id="AlbumList">
+      <div></div>
+      <div class="entries" data-entries-container></div>
+      <template data-template>
+        <div class="card">
+          <div id="card-grid">
+            <img class="img" src="#" data-img />
+            <div id="card-text">
+              <h2><a class="url" href="#" data-url></a></h2>
+              <h3 class="artist" data-artist></h3>
+              <h4 class="year" data-year></h4>
+            </div>
+          </div>
+        </div>
+      </template>
+      <div></div>
+    </div>
+    
+    <script src="./script.js"></script>
+    <footer>
+
+      <ul>
+        <a href="https://notneelpatel.github.io">2023 Neel Patel</a>
+        <a>|</a>
+        <a href="https://github.com/NotNeelPatel/Albums">GitHub Repo</a>
+        
+      </ul>
+    </footer>
+  </body>
+
+</html>

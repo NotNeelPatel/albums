@@ -1,0 +1,27 @@
+
+====NO AUDIO FEATURES FOUND FOR ALBUM====
+Looked for albums that are similar or averaged out other albums to get these values
+
+[acousticness, danceability, energy, instrumentalness, valence]
+Revolutionary, Vol.2 -> "acousticness": 0.215, "danceability": 0.693, "energy": 0.742, "instrumentalness": 0.074, "valence": 0.6
+Donuts J.Dilla -> "acousticness": 0.559, "danceability": 0.526, "energy": 0.623, "instrumentalness": 0.695, "valence": 0.532
+Geogaddi -> "acousticness": 0.462, "danceability": 0.481, "energy": 0.396, "instrumentalness": 0.87, "valence": 0.263
+
+====WRONG VALUES====
+
+Mother Earth's Plantasia -> "release_date": "1976"
+
+searchInput.addEventListener("input", (e) => {
+
+    const value = e.target.value.toLowerCase();
+    entries.forEach((entry) => {
+        a = entry.artist.join(" ");
+        g = entry.genres.join(" ")
+      const isVisible =
+        entry.name.toLowerCase().includes(value) ||
+        entry.year.includes(value) ||
+        a.toLowerCase().includes(value) ||
+        g.toLowerCase().includes(value);
+      entry.element.classList.toggle("hide", !isVisible);
+    });
+  });

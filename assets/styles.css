@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+.hide {
+     display: none;
+}
+
+ body{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color:black;
+    font-family: "Inconsolata", monospace;
+    font-family: "Courier Prime", monospace;
+    font-size: 12pt;
+ }
+
+ .card {
+
+    text-align: center;
+
+ }
+
+ #card-grid{
+    width:300px;
+    display:grid;
+
+
+ }
+ .img{
+    
+ }
+ #card-text {
+     
+ 
+ }
+
+ .entries {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+     grid-gap: 25px;
+     justify-content: center;
+ }
+
+
+.search-wrapper{
+    margin-left:10%;
+    margin-right: 10%;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    border:1px solid white;
+
+}
+.slider{
+    width: 90%;
+}
+ #sliders {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(150px, 4000px));
+     text-align: center;
+
+ }
+
+
+#box-slider-val{
+    display: grid;
+    grid-template-columns: 1% 98% 1%;
+
+ }
+
+ input[name="search"] {
+     width: 60%;
+     height: 2.5em;
+ }
+ h1{
+    color: white;
+    text-align:center
+ }
+
+ h2,h3,h4{
+    color: white;
+    margin-bottom: -12px;
+}
+
+
+a {
+    color:white;
+    text-decoration:none
+}
+p{
+    color: white;
+    line-height: 1px;
+    margin-bottom: 15px;
+}
+
+
+ footer{
+    color:white;
+    text-align: center;
+ }
+ input{
+    margin: 0 auto;
+    display: block;
+    font-family: "Courier Prime", monospace;
+ }
+ .invisible_button{
+    padding-top:20px;
+    color: white;
+    background-color: transparent;
+    font-size: large;
+    text-align: center;
+    vertical-align: center;
+    border:none;
+
+ }
