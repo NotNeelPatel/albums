@@ -23,10 +23,14 @@ def add_to_json(album_data):
 token = get_token()
 
 if __name__ == "__main__":
-    album = str(sys.argv[1])
-    if str(sys.argv[1]) == '--manual':
-        print(sys.argv[0])
-    album_token = search_album(album, token)
+    # --url used when searching doesn't work
+    if str(sys.argv[1]) in ['--url', '--u']:
+        album = str(sys.argv[1])
+        url = str(sys.argv[2])
+        album_token = url[31:-26]
+    else:
+        album = str(sys.argv[1])
+        album_token = search_album(album, token)
 
     if album_token is None:
         print('Error: No album id')

@@ -33,6 +33,7 @@ function createEntries(firstTime) {
         .then((data) => {
         if (firstTime) {
             albumData = data;
+            document.getElementById("num-albums").innerHTML = "A collection of " + (Object.keys(albumData).length) + " hand-picked albums";
         } else {
             entryContainer.innerHTML = "";
         }
@@ -126,19 +127,16 @@ function filter() {
             parameters.push(key);
         }
       });
-    console.log(parameters);
-  
+
     for (let i = 0; i < albumData.length; i++) {
         albumData[i].score = 0;
         for(let j = 0; j < parameters.length; j++){
             let p = parameters[j]
             let s = document.getElementById(p+"-slider");
-            console.log(albumData[i][p])
             albumData[i].score += Math.pow(s.value - albumData[i][p] * 10, 2)
         }
     }
 
-    console.log(albumData)
     albumData.sort(function(a, b) {
         return a.score - b.score;
     });

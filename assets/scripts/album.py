@@ -106,7 +106,7 @@ def get_album_data(album_token, token) -> dict:
         track_ids += t["id"] + "%2C"
 
     duration = convert_ms(duration_ms)
-
+   
     #acousticness, danceability, energy, instrumentalness, valence
     feature_values = get_track_features(track_ids[:-3], total_tracks, token)
 
