@@ -1,4 +1,4 @@
-# Albums
+# [Albums](https://notneelpatel.github.io/albums/)
 
 ### A webpage that will allow you to discover more music and my music taste.
 
