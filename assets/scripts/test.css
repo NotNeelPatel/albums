@@ -1,0 +1,11 @@
+body{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: black;
+}
+#side{
+}
+img{
+    max-width: 40px;
+
+}

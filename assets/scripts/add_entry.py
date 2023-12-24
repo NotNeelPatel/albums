@@ -29,7 +29,9 @@ if __name__ == "__main__":
         url = str(sys.argv[2])
         album_token = url[31:-26]
     else:
-        album = str(sys.argv[1])
+        album = ""
+        for i in (sys.argv[1:]):
+            album += str(i) + " "
         album_token = search_album(album, token)
 
     if album_token is None:
