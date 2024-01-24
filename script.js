@@ -32,7 +32,7 @@ function createEntries(firstTime) {
         .then((res) => res.json())
         .then((data) => {
         if (firstTime) {
-            albumData = data;
+            albumData = data.reverse();
             document.getElementById("num-albums").innerHTML = "A collection of " + (Object.keys(albumData).length) + " hand-picked albums";
         } else {
             entryContainer.innerHTML = "";
@@ -44,6 +44,7 @@ function createEntries(firstTime) {
             const year = card.querySelector("[data-year]");
             const img = card.querySelector("[data-img]");
             img.src = entry.image_url
+            img.href = entry.album_url
             url.textContent = entry.name;
             artist_card.textContent = entry.artists;
             year.textContent = entry.release_date;

@@ -24,7 +24,7 @@ token = get_token()
 
 if __name__ == "__main__":
     # --url used when searching doesn't work
-    if str(sys.argv[1]) in ['--url', '--u']:
+    if str(sys.argv[1]) in ['--url', '--u', '-url', '-u']:
         album = str(sys.argv[1])
         url = str(sys.argv[2])
         album_token = url[31:-26]
