@@ -125,6 +125,7 @@
               <h3 class="artist" data-artist></h3>
               <h4 class="year" data-year></h4>
             </div>
+            <div class="filter"></div>
           </div>
         </div>
       </template>
@@ -135,12 +136,22 @@
     <footer>
 
       <ul>
-        <a href="https://notneelpatel.github.io">2023 Neel Patel</a>
+        <a href="https://notneelpatel.github.io">2024 Neel Patel</a>
         <a>|</a>
         <a href="https://github.com/NotNeelPatel/Albums">GitHub Repo</a>
         
       </ul>
     </footer>
   </body>
+
+  <svg>
+    <filter id='noiseFilter'>
+      <feTurbulence 
+        type='fractalNoise' 
+        baseFrequency='0.8'
+        numOctaves="2"
+        stitchTiles='stitch'/>
+    </filter>
+  </svg>
 
 </html>

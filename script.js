@@ -13,6 +13,7 @@ searchInput.addEventListener("input", (e) => {
 });
 
 function search(e){
+  console.log(e.target.value)
   const value = e.target.value.toLowerCase();
   entries.forEach((entry) => {
       a = entry.artist.join(" ");
