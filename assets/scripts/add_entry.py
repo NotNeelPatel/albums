@@ -25,9 +25,8 @@ token = get_token()
 if __name__ == "__main__":
     # --url used when searching doesn't work
     if str(sys.argv[1]) in ['--url', '--u', '-url', '-u']:
-        album = str(sys.argv[1])
         url = str(sys.argv[2])
-        album_token = url[31:-26]
+        album_token = url.split("https://open.spotify.com/album/")[1].split("?si")[0]
     else:
         album = ""
         for i in (sys.argv[1:]):
@@ -36,8 +35,9 @@ if __name__ == "__main__":
 
     if album_token is None:
         print('Error: No album id')
-
+    
     album_data = get_album_data(album_token, token)
+
     print('Add', album_data['name'],  'by',album_data['artists'], '? (y/n)')
     i = input()
     if i.lower() in ['', 'y', 'yes']:

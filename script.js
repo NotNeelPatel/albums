@@ -2,7 +2,6 @@ createEntries(true);
 const dataTemplate = document.querySelector("[data-template]");
 const entryContainer = document.querySelector("[data-entries-container");
 const searchInput = document.querySelector("[data-search]");
-const clearContainer = document.getElementsByClassName("entries");
 
 let entries = [];
 var searchEvent;

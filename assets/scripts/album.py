@@ -89,7 +89,7 @@ def get_album_data(album_token, token) -> dict:
         artist_genre_data += [get_genre(a["id"], token)]
 
     # genre is based on common genres amongst all the artists, or just the one artist, if there is only one artist
-    # This is not a good way to do it because artists don"t just stick to one genre usually
+    # This is not a good way to do it because artists don't just stick to one genre usually
     genres = set(artist_genre_data[0]).intersection(*artist_genre_data[1:])
     genres = list(genres)
     
